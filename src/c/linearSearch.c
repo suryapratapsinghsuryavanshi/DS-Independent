@@ -1,5 +1,5 @@
 // Linear Search in C
-// Linear Search works on even unsorted array but uses O(n) time.
+// Linear Search works on unsorted array also but uses O(n) time.
 
 #include <stdio.h>
 
