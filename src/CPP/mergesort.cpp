@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-void swapping(int &a, int &b) {     //swap the content of a and b
+void swapping(int &a, int &b) {     
    int temp;
    temp = a;
    a = b;
@@ -11,46 +11,31 @@ void display(int *array, int size) {
       cout << array[i] << " ";
    cout << endl;
 }
-void merge(int *array, int l, int m, int r) {
-   int i, j, k, nl, nr;
-   //size of left and right sub-arrays
-   nl = m-l+1; nr = r-m;
-   int larr[nl], rarr[nr];
-   //fill left and right sub-arrays
-   for(i = 0; i<nl; i++)
-      larr[i] = array[l+i];
-   for(j = 0; j<nr; j++)
-      rarr[j] = array[m+1+j];
-   i = 0; j = 0; k = l;
-   //marge temp arrays to real array
-   while(i < nl && j<nr) {
-      if(larr[i] <= rarr[j]) {
-         array[k] = larr[i];
-         i++;
-      }else{
-         array[k] = rarr[j];
-         j++;
-      }
-      k++;
-   }
-   while(i<nl) {       //extra element in left array
-      array[k] = larr[i];
-      i++; k++;
-   }
-   while(j<nr) {     //extra element in right array
-      array[k] = rarr[j];
-      j++; k++;
-   }
-}
-void mergeSort(int *array, int l, int r) {
-   int m;
-   if(l < r) {
-      int m = l+(r-l)/2;
-      // Sort first and second arrays
-      mergeSort(array, l, m);
-      mergeSort(array, m+1, r);
-      merge(array, l, m, r);
-   }
+void mergeSort(int a[], int start, int end) {
+    if (end - start == 1) {
+        return;
+    }
+    int mid = (start + end) / 2;
+    mergeSort(a, start, mid);
+    mergeSort(a, mid, end);
+    int temp[end - start];
+    int i = start, j = mid, k = 0;
+    while (k < end - start) {
+        if (j == end ||  (i < mid && a[i] < a[j])) {
+            //Add from 1st half
+            temp[k] = a[i];
+            ++k;
+            ++i;
+        } else {
+            //Add from 2nd half
+            temp[k] = a[j];
+            ++k;
+            ++j;
+        }
+    }
+    for (int l = 0; l < end - start; ++l) {
+        a[start + l] = temp[l];
+    }
 }
 int main() {
    int n;
@@ -63,7 +48,7 @@ int main() {
    }
    cout << "Array before Sorting: ";
    display(arr, n);
-   mergeSort(arr, 0, n-1);     //(n-1) for last index
+   mergeSort(arr, 0, n);   
    cout << "Array after Sorting: ";
    display(arr, n);
 }
