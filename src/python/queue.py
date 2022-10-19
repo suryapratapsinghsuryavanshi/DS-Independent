@@ -1,5 +1,3 @@
-
-# Initializing a queue
 queue = []
 
 # Adding elements to the queue
