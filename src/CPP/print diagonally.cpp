@@ -1,21 +1,25 @@
-    vector<int> ans;
+  	
 
-     for(int j=0;j<n;j++){
+	vector<int> downwardDigonal(int N, vector<vector<int>> A)
+	{int n=A.size();
+	    vector<int>v;
+	   for(int i=0;i<n;i++){
+	       int a=i,j=1;
+	       
+	        for(int j=0;j<=i,a>=0;j++,a--){
+	           v.push_back(A[j][a]);
+	       }
+	    if(i==n-1){a=n-1;
+	    while(j<n){
+	           int k=a;
+	           for(int p=j;p<=a ,k>=j;p++,k--){
+	               v.push_back(A[p][k]);
+	           }
+	           j++;
+	       }
+	      
+	       
+	   }}
+	   return v;
+	}
 
-         for(int k=0,t=j;k<=j,t>=0;k++,t--)
-
-             ans.push_back(arr[k][t]);
-
-     } 
-
-     int j=n-1;
-
-     for(int i=1;i<n;i++){
-
-         for(int k=i,t=j;k<=j,t>=i;k++,t--)
-
-             ans.push_back(arr[k][t]);
-
-     }
-
-     return ans;
