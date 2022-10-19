@@ -2,3 +2,6 @@
 
 # Ignore the default vscode directory.
 .vscode
+
+# Ignore Windows exe file
+*.exe
