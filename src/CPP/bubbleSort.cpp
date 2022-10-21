@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+// Code written by Sachin Shah 
+// Let's connect on GitHub - @imsachinshah
+// Twitter - "@imsachinshah0"
+
 void printArray(int a[], int n)
 {
     int i;
