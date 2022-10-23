@@ -10,3 +10,4 @@ int main()
   scanf("%d",p);
   printf("the valu of a is= %d",a);
 }
+//
