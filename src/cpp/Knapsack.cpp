@@ -45,6 +45,6 @@ void knapsack(items c[],int cap,int n)
 
 int main ()
 {
-    items i[]={{"m6",10,20034},{"Galaxy M12",5,13800},{"g5",32,569000},{"Narzo s8",8,4859000},{"s10 holo",19,279300}};
-    knapsack(i,40,5);
+    items i[]={{"m6",10,20034},{"Galaxy M12",5,13800},{"g5",32,569000},{"Narzo s8",8,4859000},{"s10 holo",19,279300},{"Pixel 7 Pro",30,70000}};
+    knapsack(i,40,6);
 }
